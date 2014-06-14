@@ -4,68 +4,7 @@
  * and open the template in the editor.
  */
 
-package estrucmagister;
-
-/**
- *
- * @author Nanda
- */
-public class EstrucMagister {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
-        ListaDoble listaDoblePrueba = new ListaDoble();
-        listaDoblePrueba.ImprimirListaDoble();
-        listaDoblePrueba.AgregarNodoInicio("2");
-        listaDoblePrueba.AgregarNodoInicio("1");
-        listaDoblePrueba.AgregarNodoFinal("5");
-        listaDoblePrueba.AgregarNodoPos("2", 2);
-        listaDoblePrueba.AgregarNodoPos("4", 3);
-        listaDoblePrueba.ImprimirListaDoble();
-    }
-    /*
- * Crea un nodo doble
-*/
-class NodoDoble {
-    public NodoDoble Siguiente;
-    public NodoDoble Anterior;
-    public Object Dato;
-    
-    //Constructor vacío
-    public NodoDoble()
-    {
-        Siguiente = null;
-        Anterior = null;
-        Dato = null;
-    }
-    
-    //Constructor que define el objecto del nodo solamente
-    public NodoDoble(Object dato)
-    {
-        Dato = dato;
-        Siguiente = null;
-        Anterior = null;
-    }
-
-    //Constructor que define el objetodel nodo y el nodo siguiente
-    public NodoDoble(Object dato, NodoDoble siguiente)
-    {
-        Siguiente = siguiente;
-        Dato = dato;
-        Anterior = null;
-    }
-
-        private NodoDoble getSiguiente() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        private void setSiguiente(NodoDoble siguiente) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-    }
+package estructurasmafernanda;
 
 /*
  * Clase que tiene los métodos de la lista doble
@@ -73,8 +12,8 @@ class NodoDoble {
 class ListaDoble {
     public NodoDoble PrimerNodo;
     public NodoDoble UltimoNodo;
-        private int LargoLista;
-        private NodoDoble dato;
+    public int LargoLista;
+    public NodoDoble dato;
        
     
     //Constructor Vacío
@@ -202,14 +141,14 @@ class ListaDoble {
     }
     public boolean EliminarNodoPos(int pos)
     {
-     if (this.PrimerNodo != null){
+     if (PrimerNodo != null){
         if(pos == 1)
         {
-            this.PrimerNodo = this.PrimerNodo.getSiguiente();
+            PrimerNodo = PrimerNodo.getSiguiente();
         }
         else
         {
-            NodoDoble nodoAct = this.PrimerNodo;
+            NodoDoble nodoAct = PrimerNodo;
             NodoDoble nodoAnt =  new NodoDoble();
             for (int currentPos =1; currentPos < pos; currentPos++){
                 nodoAnt = nodoAct;
@@ -217,7 +156,7 @@ class ListaDoble {
             }
             nodoAnt.setSiguiente(nodoAct.getSiguiente());
         }
-            this.LargoLista--;
+            LargoLista--;
             return true;
      }
      else {
@@ -228,16 +167,10 @@ class ListaDoble {
             }
         }
     }
-    
-         
-    
-    }
-    
-    
-     
-    
 
-
-    
-    
-
+/*
+* OBSERVACIONES:
+* Elimina inicio está agregando un nodo en lugar de eliminarlo
+* Elimina final está agregando un nodo final vacío
+* Elimina pos no está terminado
+*/
