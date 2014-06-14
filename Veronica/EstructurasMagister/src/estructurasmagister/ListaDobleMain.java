@@ -6,6 +6,7 @@
 
 package estructurasmagister;
 
+
 /**
  *
  * @author Adrian
@@ -157,7 +158,14 @@ class ListaDoble {
     }
     
     //Hacer los códigos de eliminar inicio, final y pos
-    
+
+    /*
+* OBSERVACIONES
+* ¿De donde sacó LargoLista?
+* ¿Por qué en eliminarNodoInicio, si el primer nodo es nulo, sigue haciendo el algorítmo?
+* No entiendo los algorítmos de los eliminar, en la próxima clase me los puede explicar
+*/
+
      @SuppressWarnings("empty-statement")
      public boolean eliminarnodoinicio(int num , Object anterior)
     {
